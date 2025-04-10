@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI陪聊 - 个人资料</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container-fluid p-0 vh-100 d-flex flex-column">
+        <!-- 头部图片区域 - 直接使用自定义头图 -->
+        <div class="hero-image" style="background-image: url('./uploads/custom-header.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- 个人资料头部 -->
+        <header class="profile-header p-3 text-center">
+            <h4 class="mb-4">个人资料</h4>
+            <div class="user-profile">
+                <div class="avatar-container mx-auto mb-3">
+                    <img src="images/user-avatar.jpg" alt="用户头像" class="rounded-circle border border-danger p-1" width="100" height="100">
+                    <div class="edit-avatar position-absolute bottom-0 end-0">
+                        <button class="btn btn-sm btn-danger rounded-circle">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                </div>
+                <h5 class="username mb-1">用户名</h5>
+                <p class="user-id text-secondary mb-3">ID: 123456789</p>
+                <div class="user-stats d-flex justify-content-center mb-4">
+                    <div class="stat-item text-center px-3">
+                        <div class="stat-value">12</div>
+                        <div class="stat-label text-secondary">角色</div>
+                    </div>
+                    <div class="stat-item text-center px-3 border-start border-end border-secondary">
+                        <div class="stat-value">867</div>
+                        <div class="stat-label text-secondary">消息</div>
+                    </div>
+                    <div class="stat-item text-center px-3">
+                        <div class="stat-value">30</div>
+                        <div class="stat-label text-secondary">天数</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 个人资料设置区域 -->
+        <main class="profile-content flex-grow-1 p-3 overflow-auto">
+            <div class="settings-list">
+                <div class="setting-group mb-4">
+                    <h6 class="group-title text-secondary mb-3">账户设置</h6>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-user me-3 text-danger"></i>
+                            修改个人资料
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-lock me-3 text-danger"></i>
+                            隐私设置
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded">
+                        <div class="setting-label">
+                            <i class="fas fa-bell me-3 text-danger"></i>
+                            通知设置
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                </div>
+
+                <div class="setting-group mb-4">
+                    <h6 class="group-title text-secondary mb-3">内容与偏好</h6>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-filter me-3 text-danger"></i>
+                            内容筛选
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="contentFilter" checked>
+                        </div>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-heart me-3 text-danger"></i>
+                            我的收藏
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded">
+                        <div class="setting-label">
+                            <i class="fas fa-history me-3 text-danger"></i>
+                            聊天历史
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h6 class="group-title text-secondary mb-3">支持与反馈</h6>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-question-circle me-3 text-danger"></i>
+                            帮助中心
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded mb-2">
+                        <div class="setting-label">
+                            <i class="fas fa-comment-alt me-3 text-danger"></i>
+                            反馈建议
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                    <div class="setting-item d-flex justify-content-between align-items-center p-3 bg-dark-subtle rounded">
+                        <div class="setting-label">
+                            <i class="fas fa-sign-out-alt me-3 text-danger"></i>
+                            退出登录
+                        </div>
+                        <i class="fas fa-chevron-right text-secondary"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部导航栏 -->
+        <footer class="app-footer p-2">
+            <div class="row text-center">
+                <div class="col">
+                    <a href="index.html" class="text-secondary text-decoration-none">
+                        <i class="fas fa-home fs-4"></i>
+                        <div class="small">首页</div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="explore.html" class="text-secondary text-decoration-none">
+                        <i class="fas fa-compass fs-4"></i>
+                        <div class="small">发现</div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="chat.html" class="text-secondary text-decoration-none">
+                        <i class="fas fa-comment fs-4"></i>
+                        <div class="small">聊天</div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="profile.html" class="text-danger text-decoration-none">
+                        <i class="fas fa-user fs-4"></i>
+                        <div class="small">我的</div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

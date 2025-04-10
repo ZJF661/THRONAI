@@ -1,0 +1,689 @@
+/* 全局样式 */
+:root {
+    --primary-color: #6c3483;
+    --secondary-color: #8e44ad;
+    --accent-color: #9b59b6;
+    --dark-color: #1e1e2f;
+    --card-bg: #2a2a42;
+    --light-text: #f8f9fa;
+    --chat-bg: #262637;
+    --user-msg-bg: #6c3483;
+    --ai-msg-bg: #2a2a42;
+    --toolbar-bg: #1a1a2d;
+    --border-color: #4a4a69;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头图区域样式 */
+.hero-image {
+    position: relative;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.hero-image .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-image p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* 类型选择器样式 */
+.type-selector {
+    background-color: var(--dark-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.type-selector .container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.type-button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-button:hover, .type-button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 特色区域样式 */
+.featured-section {
+    padding: 40px 0;
+}
+
+.featured-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--light-text);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 15px;
+}
+
+/* 卡片样式 */
+.character-card {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 宽高比 */
+    overflow: hidden;
+}
+
+.card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.character-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+.card-description {
+    color: #cccccc;
+    margin-bottom: 15px;
+    flex-grow: 1;
+    font-size: 0.9rem;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-btn {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.chat-btn:hover {
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    color: white;
+}
+
+.attribute {
+    font-size: 0.8rem;
+    color: #bbbbbb;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* 聊天页面样式 */
+.chat-page {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #111;
+    opacity: 0.9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.4);
+}
+
+/* 聊天头部 */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #333;
+    z-index: 10;
+}
+
+.chat-header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #444;
+}
+
+.chat-header-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+}
+
+/* 聊天内容区 */
+.chat-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 消息样式 */
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 85%;
+}
+
+.user-message {
+    align-self: flex-end;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.ai-message {
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.message-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message-bubble {
+    background-color: #333;
+    border-radius: 18px;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.4;
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.user-message .message-bubble {
+    background-color: #d32f2f;
+    color: white;
+    border-top-right-radius: 2px;
+}
+
+.ai-message .message-bubble {
+    background-color: #333;
+    color: white;
+    border-top-left-radius: 2px;
+}
+
+/* 工具栏 */
+.interaction-toolbar {
+    display: flex;
+    overflow-x: auto;
+    background-color: #222;
+    padding: 10px 5px;
+    gap: 10px;
+    border-top: 1px solid #333;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    z-index: 5;
+}
+
+.interaction-toolbar.visible {
+    transform: translateY(0);
+}
+
+/* 工具栏图标样式 */
+.toolbar-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.toolbar-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.toolbar-item:hover {
+    background-color: #444;
+}
+
+.toolbar-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.toolbar-item span {
+    font-size: 10px;
+    text-align: center;
+}
+
+/* 聊天输入区 */
+.chat-footer {
+    padding: 10px 15px;
+    background-color: #111;
+    border-top: 1px solid #333;
+    z-index: 10;
+}
+
+.chat-footer .input-group {
+    display: flex;
+    align-items: center;
+}
+
+#message-input {
+    flex: 1;
+    background-color: #222;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+#message-input:focus {
+    outline: none;
+    background-color: #333;
+}
+
+#toolbar-toggle, #send-button {
+    background-color: transparent;
+    border: none;
+    color: #d32f2f;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#send-button {
+    color: #d32f2f;
+}
+
+/* 侧边栏 */
+.character-sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #222;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.character-sidebar.visible {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #333;
+}
+
+.character-name {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.character-description {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.character-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.character-prompt {
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 打字指示器 */
+.typing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+.typing-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 3px;
+    opacity: 0.6;
+    animation: typing 1.4s infinite both;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Tool styles */
+.tool-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    margin-bottom: 6px;
+}
+
+.tool-label {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* 红色发送按钮样式 */
+.send-button-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #d32f2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+/* 修改character页面进入后的效果 */
+body.chat-page {
+    background-color: #111;
+    color: #fff;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+/* 添加特殊按钮样式 */
+.red-button {
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .character-sidebar {
+        width: 300px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .chat-container {
+        height: calc(100vh - 200px);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        height: 130px;
+    }
+    
+    .hero-image h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-image p {
+        font-size: 1rem;
+    }
+    
+    .character-sidebar {
+        width: 280px;
+    }
+    
+    .sidebar-avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 从样式表中移除状态栏相关的CSS */
+.status-bar {
+    display: none;
+}
+
+#toolbar-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    color: #d32f2f;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+}
+
+#toolbar-toggle span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#toolbar-toggle i {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+} 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发现 - AI聊天</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container-fluid p-0 vh-100 d-flex flex-column">
+        <!-- 头部图片区域 - 直接使用自定义头图 -->
+        <div class="hero-image" style="background-image: url('./uploads/custom-header.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- 顶部导航 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-dark py-2">
+            <div class="container">
+                <a class="navbar-brand text-danger fw-bold" href="#">AI聊天</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">首页</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="explore.html">发现</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control bg-dark text-white border-secondary" type="search" placeholder="搜索AI角色">
+                            <button class="btn btn-outline-danger" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <div class="container mt-4">
+            <!-- 热门推荐 -->
+            <div class="section mb-5">
+                <h5 class="text-white mb-3">热门推荐</h5>
+                <div class="trending-items">
+                    <!-- 热门角色项将通过JavaScript动态加载 -->
+                </div>
+            </div>
+
+            <!-- 最新角色 -->
+            <div class="section mb-5">
+                <h5 class="text-white mb-3">最新角色</h5>
+                <div class="row g-3 new-characters">
+                    <!-- 最新角色卡片将通过JavaScript动态加载 -->
+                </div>
+            </div>
+
+            <!-- 类别浏览 -->
+            <div class="section mb-5">
+                <h5 class="text-white mb-3">浏览类别</h5>
+                <div class="row g-3">
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-dragon text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">魔幻</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-robot text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">科幻</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-heart text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">浪漫</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-ghost text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">恐怖</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-school text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">校园</h6>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="category-card p-3 bg-dark-subtle rounded text-center">
+                            <i class="fas fa-briefcase text-danger mb-2 fs-3"></i>
+                            <h6 class="mb-0">职场</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <nav class="navbar fixed-bottom navbar-dark bg-black border-top border-dark py-2">
+            <div class="container">
+                <div class="navbar-nav flex-row justify-content-around w-100">
+                    <a class="nav-link text-center" href="index.html">
+                        <i class="fas fa-home d-block mb-1"></i>
+                        <small>首页</small>
+                    </a>
+                    <a class="nav-link text-center active" href="explore.html">
+                        <i class="fas fa-compass d-block mb-1"></i>
+                        <small>发现</small>
+                    </a>
+                    <a class="nav-link text-center" href="chat.html">
+                        <i class="fas fa-comment d-block mb-1"></i>
+                        <small>消息</small>
+                    </a>
+                    <a class="nav-link text-center" href="profile.html">
+                        <i class="fas fa-user d-block mb-1"></i>
+                        <small>我的</small>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

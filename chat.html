@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天界面 - AI陪聊</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="chat-page">
+    <div class="container-fluid p-0 vh-100 d-flex flex-column">
+        <!-- 背景图片区域 -->
+        <div class="chat-background"></div>
+        
+        <!-- 聊天头部 -->
+        <div class="chat-header">
+            <a href="index.html" class="text-white me-2">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <img class="chat-header-avatar rounded-circle me-2" src="./images/placeholder.jpg" alt="角色头像" width="40" height="40">
+            <h5 class="chat-header-name mb-0 text-white">唐纳德</h5>
+            <div class="ms-auto">
+                <button id="sidebar-info-btn" class="btn btn-link text-white">
+                    <i class="fas fa-info-circle"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 聊天内容区域 -->
+        <div class="chat-content flex-grow-1">
+            <!-- 消息会在这里动态添加 -->
+        </div>
+        
+        <!-- 聊天工具栏 -->
+        <div class="interaction-toolbar">
+            <div class="toolbar-item" data-tool="whip">
+                <img src="./interactions/icons/whip.png" alt="鞭打" class="toolbar-icon">
+                <span>鞭打</span>
+            </div>
+            <div class="toolbar-item" data-tool="handcuffs">
+                <img src="./interactions/icons/handcuffs.png" alt="手铐" class="toolbar-icon">
+                <span>手铐</span>
+            </div>
+            <div class="toolbar-item" data-tool="wax">
+                <img src="./interactions/icons/wax.png" alt="滴蜡" class="toolbar-icon">
+                <span>滴蜡</span>
+            </div>
+        </div>
+        
+        <!-- 聊天输入区域 -->
+        <div class="chat-footer">
+            <div class="input-group">
+                <button id="toolbar-toggle" class="btn">
+                    <i class="fas fa-angle-right"></i>
+                    <span>互动</span>
+                </button>
+                <input type="text" id="message-input" class="form-control" placeholder="发送消息给XXX">
+                <div class="send-button-container">
+                    <button id="send-button" class="btn text-white">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 角色信息侧边栏 -->
+    <div class="character-sidebar">
+        <div class="sidebar-header">
+            <h5 class="mb-0">角色信息</h5>
+            <button id="close-sidebar-btn" class="btn-close btn-close-white"></button>
+        </div>
+        <div class="sidebar-content p-3">
+            <div class="text-center mb-4">
+                <img class="sidebar-avatar rounded-circle mb-3" src="./images/placeholder.jpg" alt="角色头像" width="100" height="100">
+                <h4 class="character-name">加载中...</h4>
+            </div>
+            <div class="mb-3">
+                <h6>简介:</h6>
+                <p class="character-description">加载中...</p>
+            </div>
+            <div class="mb-3">
+                <h6>标签</h6>
+                <div class="character-tags">
+                    <!-- 标签将在这里动态添加 -->
+                </div>
+            </div>
+            <div class="mb-3">
+                <h6>开场白:</h6>
+                <div class="character-prompt small text-muted">加载中...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 遮罩层 -->
+    <div class="sidebar-overlay"></div>
+    
+    <!-- 脚本引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/images.js"></script>
+    <script src="./js/characters.js"></script>
+    <script src="./js/modelark.js"></script>
+    <script src="./js/chat.js"></script>
+</body>
+</html> 
