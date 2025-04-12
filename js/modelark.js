@@ -5,9 +5,9 @@
  */
 
 // 接入点配置
-const MODELARK_ENDPOINT = 'ep-20250331151030-mxwqh';
+const MODELARK_ENDPOINT = 'ep-20250412095024-9ktn4';
 const API_URL = 'https://ark.ap-southeast.bytepluses.com/api/v3/chat/completions';
-const API_KEY = '0e714ef1-a0dd-48d4-bac2-823dc941e5b5';
+const API_KEY = '58f73c72-8f0f-4a6e-8f71-296e92c29ff1';
 
 // 用于存储会话历史记录的对象
 const chatSessions = {};
