@@ -710,6 +710,20 @@ function toggleToolbar() {
     if (interactionToolbar.classList.contains('visible')) {
         icon.classList.remove('fa-angle-right');
         icon.classList.add('fa-angle-down');
+        
+        // 确保工具栏显示时，页面滚动到底部，让用户看到输入框
+        setTimeout(() => {
+            scrollToBottom();
+            
+            // 检查是否为移动设备 (小于768px宽度通常视为移动设备)
+            if (window.innerWidth <= 768) {
+                // 确保聊天内容区域滚动到底部，以显示最新消息和输入框
+                chatContent.scrollTop = chatContent.scrollHeight;
+                
+                // 确保输入框可见并自动获得焦点
+                messageInput.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        }, 300); // 给CSS动画一些时间完成
     } else {
         icon.classList.remove('fa-angle-down');
         icon.classList.add('fa-angle-right');
